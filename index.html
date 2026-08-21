@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ruff Pets | Viajar juntos, es mejor</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4efe7;
+    color:#27231f;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* MENU */
+
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:10;
+    padding:28px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:white;
+}
+
+.logo{
+    background:#b97940;
+    color:#412710;
+    padding:10px 18px;
+    border-radius:7px;
+    font-size:26px;
+    font-weight:800;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+nav{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+nav a{
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* HERO */
+
+.hero{
+    min-height:760px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(18,24,20,.91) 0%,
+        rgba(18,24,20,.69) 39%,
+        rgba(18,24,20,.18) 69%,
+        rgba(18,24,20,.02) 100%
+    ),
+    url("hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+
+    padding:125px 6% 70px;
+
+    color:white;
+}
+
+.hero-content{
+    max-width:570px;
+}
+
+.eyebrow{
+    color:#dcc59d;
+    letter-spacing:2px;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:76px;
+    line-height:.95;
+    letter-spacing:-2px;
+    margin-bottom:20px;
+}
+
+.hero-text{
+    font-size:23px;
+    line-height:1.4;
+    max-width:430px;
+    margin-bottom:30px;
+}
+
+.buy-row{
+    display:flex;
+    align-items:stretch;
+    max-width:510px;
+}
+
+.price{
+    background:#172019;
+    padding:18px 22px;
+    font-size:21px;
+    font-weight:bold;
+    border:1px solid rgba(255,255,255,.3);
+}
+
+.buy{
+    background:#d2b27e;
+    padding:18px 25px;
+    color:#2a2118;
+    font-weight:bold;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+}
+
+.hero-features{
+    display:flex;
+    gap:42px;
+    margin-top:38px;
+}
+
+.hero-feature{
+    font-size:12px;
+    text-transform:uppercase;
+    max-width:110px;
+    text-align:center;
+    line-height:1.4;
+}
+
+/* PRODUCT */
+
+.product{
+    background:#f2ece2;
+    padding:85px 7%;
+}
+
+.product-grid{
+    max-width:1180px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:65px;
+    align-items:center;
+}
+
+.product h2{
+    font-size:47px;
+    line-height:1.05;
+    margin-bottom:22px;
+}
+
+.product p{
+    font-size:18px;
+    line-height:1.7;
+    color:#686158;
+}
+
+.product-card{
+    background:white;
+    border-radius:18px;
+    padding:45px;
+    box-shadow:0 20px 50px rgba(0,0,0,.09);
+}
+
+.product-card h3{
+    font-size:25px;
+    margin-bottom:22px;
+}
+
+.feature-list{
+    display:grid;
+    gap:18px;
+}
+
+.feature{
+    display:flex;
+    gap:15px;
+}
+
+.check{
+    width:28px;
+    height:28px;
+    background:#d6bd92;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex:none;
+}
+
+/* ADVENTURES */
+
+.adventures{
+    padding:85px 5%;
+    background:#fffaf3;
+    text-align:center;
+}
+
+.adventures h2{
+    font-size:43px;
+    margin-bottom:12px;
+}
+
+.adventures-sub{
+    color:#6d665d;
+    font-size:18px;
+    margin-bottom:40px;
+}
+
+.adventure-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.adventure-card{
+    height:330px;
+    border-radius:14px;
+    overflow:hidden;
+    position:relative;
+    background:#30372f;
+    display:flex;
+    align-items:flex-end;
+}
+
+.adventure-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent,rgba(0,0,0,.68));
+}
+
+.adventure-card span{
+    position:relative;
+    z-index:2;
+    color:white;
+    padding:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+    min-height:360px;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(28,31,26,.94),
+        rgba(28,31,26,.47)
+    ),
+    url("hero.jpg");
+
+    background-size:cover;
+    background-position:center 45%;
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+
+    padding:70px 7%;
+}
+
+.experience-content{
+    max-width:700px;
+}
+
+.experience h2{
+    font-size:49px;
+    margin-bottom:15px;
+}
+
+.experience p{
+    font-size:21px;
+    color:#e0d9ce;
+    line-height:1.6;
+}
+
+/* CTA */
+
+.cta{
+    background:#eee6da;
+    padding:55px 6%;
+}
+
+.cta-inner{
+    max-width:1150px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.cta h3{
+    font-size:24px;
+}
+
+.cta p{
+    margin-top:7px;
+    color:#746c61;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+}
+
+.button{
+    padding:16px 22px;
+    border:1px solid #665a4d;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.button-main{
+    background:#b57a40;
+    color:white;
+    border:none;
+}
+
+/* FOOTER */
+
+footer{
+    background:#182019;
+    color:#ccc;
+    text-align:center;
+    padding:25px;
+    font-size:13px;
+}
+
+/* CELULAR */
+
+@media(max-width:800px){
+
+    nav{
+        display:none;
+    }
+
+    header{
+        padding:20px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .hero{
+        min-height:720px;
+        padding:120px 7% 60px;
+        background-position:62% center;
+    }
+
+    .hero h1{
+        font-size:54px;
+    }
+
+    .hero-text{
+        font-size:19px;
+    }
+
+    .buy-row{
+        display:block;
+    }
+
+    .price,
+    .buy{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+    }
+
+    .hero-features{
+        gap:15px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product h2{
+        font-size:36px;
+    }
+
+    .adventure-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .experience h2{
+        font-size:38px;
+    }
+
+    .cta-inner{
+        display:block;
+    }
+
+    .buttons{
+        margin-top:25px;
+        display:grid;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+ruff Pets.
+</div>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#mochila">La mochila</a>
+<a href="#caracteristicas">Características</a>
+<a href="#viajes">Viajes</a>
+<a href="#sobre">Sobre Ruff Pets</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+</header>
+
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+VIAJAR JUNTOS, ES MEJOR
+</div>
+
+<h1>RUFF PETS</h1>
+
+<div class="hero-text">
+La mochila de viaje que los acompaña a todos lados.
+</div>
+
+<div class="buy-row">
+
+<div class="price">
+$120.000
+</div>
+
+<a
+class="buy"
+href="https://www.mercadolibre.com.ar/mochila-de-viaje-para-alimentos-y-accesorios-de-mascotas/up/MLAU3708054092"
+target="_blank">
+
+COMPRAR EN MERCADO LIBRE →
+
+</a>
+
+</div>
+
+
+<div class="hero-features">
+
+<div class="hero-feature">
+◇<br>
+Material resistente
+</div>
+
+<div class="hero-feature">
+🐾<br>
+Cómoda y práctica
+</div>
+
+<div class="hero-feature">
+✈<br>
+Apta para viajar
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="product" id="mochila">
+
+<div class="product-grid">
+
+<div>
+
+<div class="eyebrow" style="color:#8c6039">
+UNA MOCHILA. MUCHAS AVENTURAS.
+</div>
+
+<h2>
+Todo lo que necesitás, en un solo lugar.
+</h2>
+
+<p>
+Pensada para acompañarte en salidas, escapadas y viajes
+con tu mascota, manteniendo comida y accesorios organizados
+para que vos puedas concentrarte en disfrutar.
+</p>
+
+</div>
+
+
+<div class="product-card" id="caracteristicas">
+
+<h3>
+Pensada para viajar
+</h3>
+
+<div class="feature-list">
+
+<div class="feature">
+<div class="check">✓</div>
+<div>
+<strong>2 contenedores para alimento</strong><br>
+Para organizar la comida durante el viaje.
+</div>
+</div>
+
+<div class="feature">
+<div class="check">✓</div>
+<div>
+<strong>2 bowls plegables</strong><br>
+Para agua y comida.
+</div>
+</div>
+
+<div class="feature">
+<div class="check">✓</div>
+<div>
+<strong>Alfombra impermeable</strong><br>
+Práctica y fácil de limpiar.
+</div>
+</div>
+
+<div class="feature">
+<div class="check">✓</div>
+<div>
+<strong>Bolsillo lateral para botella</strong>
+</div>
+</div>
+
+<div class="feature">
+<div class="check">✓</div>
+<div>
+<strong>Dispenser para bolsitas</strong>
+</div>
+</div>
+
+<div class="feature">
+<div class="check">✓</div>
+<div>
+<strong>Tira trasera para carry-on</strong><br>
+La manija telescópica de la valija pasa por la tira para mantener
+la mochila sujeta durante el viaje.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="adventures" id="viajes">
+
+<h2>
+DISEÑADA PARA CADA AVENTURA
+</h2>
+
+<div class="adventures-sub">
+Ideal para el parque, viajes en auto, avión, colectivo y largas distancias.
+</div>
+
+<div class="adventure-grid">
+
+<div class="adventure-card">
+<span>PARQUE</span>
+</div>
+
+<div class="adventure-card">
+<span>VIAJE EN AUTO</span>
+</div>
+
+<div class="adventure-card">
+<span>VIAJE EN AVIÓN</span>
+</div>
+
+<div class="adventure-card">
+<span>VIAJE EN COLECTIVO</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="experience" id="sobre">
+
+<div class="experience-content">
+
+<h2>
+Más que una mochila.
+</h2>
+
+<p>
+Es libertad para compartir más momentos juntos.
+Ruff Pets nace para que una salida o un viaje con tu mascota
+sea más simple, organizado y disfrutable.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="cta" id="contacto">
+
+<div class="cta-inner">
+
+<div>
+
+<h3>
+¿LISTO PARA LA PRÓXIMA AVENTURA?
+</h3>
+
+<p>
+Encontranos en nuestros canales.
+</p>
+
+</div>
+
+
+<div class="buttons">
+
+<a
+class="button button-main"
+href="https://www.mercadolibre.com.ar/mochila-de-viaje-para-alimentos-y-accesorios-de-mascotas/up/MLAU3708054092"
+target="_blank">
+
+COMPRAR EN MERCADO LIBRE
+
+</a>
+
+<a
+class="button"
+href="https://www.instagram.com/ruff_pets/"
+target="_blank">
+
+VER EN INSTAGRAM
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+© Ruff Pets · ruffpets.com.ar
+</footer>
+
+</body>
+</html>
