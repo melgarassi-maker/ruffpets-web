@@ -291,6 +291,27 @@ nav a{
     height:100%;
     object-fit:cover;
     object-position:center;
+}  
+    
+/* PARQUE: queda como está */
+.adventure-card:nth-child(1) img{
+    object-position:center;
+}
+
+/* VIAJE EN AUTO: más hacia la mochila */
+.adventure-card:nth-child(2) img{
+    object-position:35% center;
+}
+
+/* VIAJE EN AVIÓN: acercamos mochila + carry-on */
+.adventure-card:nth-child(3) img{
+    object-position:center;
+    transform:scale(1.12);
+}
+
+/* VIAJE EN COLECTIVO: mostramos más al perro */
+.adventure-card:nth-child(4) img{
+    object-position:30% center;
 }
 
 .adventure-card::after{
