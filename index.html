@@ -411,15 +411,16 @@ nav a{
 }
 
 .button{
-    flex:1;
-    padding:14px 12px;
-    border:1px solid #b57a40;
+    width:180px;
+    height:46px;
+    padding:0 14px;
+    border:1px solid #8c6039;
     border-radius:6px;
     font-size:12px;
-    font-weight:bold;
+    font-weight:700;
     text-align:center;
-    background:#b57a40;
-    color:white;
+    background:transparent;
+    color:#3f3a35;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -428,10 +429,11 @@ nav a{
 }
 
 .button-main{
-    background:#b57a40;
-    color:white;
-    border:1px solid #b57a40;
+    background:transparent;
+    color:#3f3a35;
+    border:1px solid #8c6039;
 }
+    
 
 /* FOOTER */
 
@@ -445,18 +447,26 @@ footer{
 
 /* CELULAR */
 
-@media(max-width:800px){
+@media (max-width:800px){
+
+    body{
+        overflow-x:hidden;
+    }
 
     nav{
         display:none;
     }
 
     header{
-        padding:20px;
+        padding:14px 20px;
     }
 
     .logo{
-        font-size:20px;
+        transform:none;
+    }
+
+    .logo img{
+        width:180px;
     }
 
     .hero{
@@ -488,88 +498,77 @@ footer{
         gap:15px;
     }
 
+    .product{
+        padding:30px 7% 40px;
+    }
+
     .product-grid{
         grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .product-image img{
+        width:100%;
+        max-width:520px;
+        left:0;
+        transform:none;
+        margin-bottom:0;
     }
 
     .product h2{
-        font-size:36px;
+        font-size:30px;
     }
 
     .adventure-grid{
         grid-template-columns:1fr 1fr;
     }
 
+    .experience{
+        min-height:520px;
+        padding:50px 7% 250px;
+        overflow:hidden;
+        align-items:flex-start;
+    }
+
+    .experience-content{
+        position:relative;
+        z-index:3;
+    }
+
     .experience h2{
         font-size:38px;
+    }
+
+    .experience-person{
+        right:-18%;
+        bottom:-35px;
+        height:380px;
+    }
+
+    .cta{
+        padding:40px 6%;
     }
 
     .cta-inner{
         display:block;
     }
 
-   .buttons{
-    margin-top:25px;
-    display:flex !important;
-    flex-direction:row !important;
-    flex-wrap:nowrap !important;
-    gap:12px;
-}
-
     .buttons{
-    display:flex !important;
-    flex-direction:row !important;
-    flex-wrap:nowrap !important;
-    gap:14px !important;
-    align-items:center;
-    justify-content:flex-end;
-}
+        margin-top:25px;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
 
-.buttons .button,
-.buttons .button-main{
-    flex:0 0 auto !important;
-    width:auto !important;
-    min-width:170px;
-    height:46px;
-    padding:0 18px;
-    background:transparent !important;
-    color:#3f3a35 !important;
-    border:1px solid #8c6039 !important;
-    border-radius:6px;
-    display:flex !important;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    box-sizing:border-box;
-}
+    .buttons .button-main{
+        grid-column:1 / -1;
+    }
 
-@media (max-width: 768px) {
-
-  .experience-person {
-    right: -15% !important;
-    bottom: -10px !important;
-    height: 360px !important;
-  }
-
-  .buttons {
-    width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 10px !important;
-    justify-content: stretch !important;
-  }
-
-  .buttons .button-main {
-    grid-column: 1 / -1 !important;
-    width: 92% !important;
-    justify-self:center;
-  }
-
-  .buttons .button {
-    width: 92% !important;
-    min-width: 0 !important;
-    justify-self:center;
-  }
+    .buttons .button,
+    .buttons .button-main{
+        width:100%;
+        min-width:0;
+    }
 }
 
 </style>
