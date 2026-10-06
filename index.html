@@ -76,19 +76,15 @@ header{
     left:0;
     width:100%;
     z-index:10;
-    padding:18px 8%;
+    padding:22px 6%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     color:white;
 }
 
-.logo{
-    transform:translateX(-30px);
-}
-
 .logo img {
-    width: 285px;
+    width: 130px;
     height: auto;
     display: block;
 }
@@ -97,7 +93,6 @@ nav{
     display:flex;
     gap:34px;
     align-items:center;
-    transform:translateY(-5px);
 }
 
 nav a{
@@ -127,7 +122,7 @@ nav a{
     display:flex;
     align-items:center;
 
-    padding:125px 6% 70px;
+    padding:150px 6% 70px;
 
     color:white;
 }
@@ -138,23 +133,40 @@ nav a{
 
 .eyebrow{
     color:#dcc59d;
-    letter-spacing:2px;
-    font-size:15px;
-    margin-bottom:25px;
+    letter-spacing:3px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.hero .eyebrow{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.hero .eyebrow::before{
+    content:"";
+    width:34px;
+    height:2px;
+    background:#d2b27e;
+    flex:none;
 }
 
 .hero h1{
     font-size:76px;
+    font-weight:700;
     line-height:.95;
     letter-spacing:-2px;
-    margin-bottom:20px;
+    margin-bottom:24px;
 }
 
 .hero-text{
-    font-size:23px;
-    line-height:1.4;
-    max-width:430px;
-    margin-bottom:30px;
+    font-size:25px;
+    font-weight:600;
+    line-height:1.3;
+    max-width:460px;
+    margin-bottom:14px;
 }
 
 .buy-row{
@@ -487,16 +499,17 @@ footer{
 
 .hero-sub{
     font-size:16px;
-    line-height:1.5;
-    color:#e6dccb;
+    font-weight:400;
+    line-height:1.6;
+    color:#d9cfbd;
     max-width:440px;
-    margin:-14px 0 30px;
+    margin:0 0 32px;
 }
 
 .kit-note{
-    margin-top:12px;
-    font-size:14px;
-    color:#e6dccb;
+    margin-top:14px;
+    font-size:13px;
+    color:#d9cfbd;
     max-width:510px;
     line-height:1.5;
 }
@@ -605,26 +618,31 @@ a:focus-visible{
         padding:14px 20px;
     }
 
-    .logo{
-        transform:none;
-    }
-
     .logo img{
-        width:180px;
+        width:96px;
     }
 
     .hero{
         min-height:720px;
         padding:120px 7% 60px;
-        background-position:62% center;
+        background:
+        linear-gradient(
+            180deg,
+            rgba(18,24,20,.88) 0%,
+            rgba(18,24,20,.82) 55%,
+            rgba(18,24,20,.6) 100%
+        ),
+        url("HERO%20(2).png");
+        background-size:cover;
+        background-position:70% center;
     }
 
     .hero h1{
-        font-size:54px;
+        font-size:50px;
     }
 
     .hero-text{
-        font-size:19px;
+        font-size:21px;
     }
 
     .buy-row{
@@ -741,7 +759,7 @@ a:focus-visible{
 <header>
 
 <div class="logo">
-    <img src="logo..png" alt="Ruff Pets">
+    <img src="logo-recortado.png" alt="Ruff Pets" width="870" height="526">
 </div>
 
 <nav>
